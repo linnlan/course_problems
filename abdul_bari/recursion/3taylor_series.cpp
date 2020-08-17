@@ -5,7 +5,7 @@ double e(int x,int n)
    if(n==0)
         return 1;
    if(n>0)
-    {   double r= e(x,n-1); //first call it then operate on it
+    {   double r= e(x,n-1); //first call it then operate
         p=p*x;              //Time - O(n*n)
         f=f*n;
         return r+p/f;
