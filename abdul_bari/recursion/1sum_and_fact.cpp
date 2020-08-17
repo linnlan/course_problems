@@ -1,3 +1,4 @@
+//Basic recursive program to find sum of n natural numbers and factorial of a number
 #include<bits/stdc++.h>
 using namespace std;
 int sum(int n)
