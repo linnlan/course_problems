@@ -1,3 +1,4 @@
+//Basic recursive program to find power of a number - O(n)
 #include<bits/stdc++.h>
 using namespace std;
 int power(int x,int n)
