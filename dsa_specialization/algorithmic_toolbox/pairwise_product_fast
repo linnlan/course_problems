@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+long long product_max(const vector <int> &numbers)
+{
+    int i,j;
+    int t= numbers.size();
+    int max_index1=-1;
+    for(i=0;i<t;i++)
+    {
+        if((max_index1==-1)||(numbers.at(i)>numbers.at(max_index1))) //for i=0, only left part is executed and right part is ignored....but for i=1, max_index = 0 and 
+            max_index1=i;                                            //left part is never executed and hence same for subsequent increments while max_index varies.....
+    }
+    int max_index2=-1;
+    for(j=0;j<t;j++)
+    {
+        if((j!=max_index1)&&((max_index2==-1)||(numbers[j]>numbers[max_index2])))
+            max_index2=j;
+    }
+    cout << max_index1 << " " << max_index2 << "\n";
+    long long result=static_cast <long long> (numbers.at(max_index1))*numbers.at(max_index2);
+    return result;
+
+}
+int main() {
+	int t,i;
+	long long result;
+	cin >> t;
+	vector <int> numbers (t);
+	for(i=0;i<t;i++)
+        cin >> numbers.at(i);
+    result = product_max(numbers);
+    cout << result;
+
+	return 0;
+}
